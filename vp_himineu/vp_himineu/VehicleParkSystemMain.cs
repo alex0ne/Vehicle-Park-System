@@ -4,13 +4,13 @@
     using System.Threading;
     using VehicleParkSystem2;
 
-    static class vp
+    static class VehicleParkSystemMain
     {
         static void Main()
         {
             Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
             var engine = new Engine();
-            engine.Runrunrunrunrun();
+            engine.Run();
         }
     }
 }

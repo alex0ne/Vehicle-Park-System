@@ -3,7 +3,7 @@
     using System;
     using Comandos;
 
-    class Engine :IMecanismo
+    class Engine :IEngine
     {
         private CommandExecutor ex;
         Engine (CommandExecutor ex)
@@ -15,7 +15,7 @@
         {
         }
 
-        public void Runrunrunrunrun()
+        public void Run()
         {
             while (true)
             {

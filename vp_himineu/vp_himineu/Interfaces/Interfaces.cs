@@ -26,9 +26,9 @@ interface IVehiclePark
 
 public interface IComando { string nome { get; } IDictionary<string, string> parâmetros { get; } }
 
-interface IMecanismo
+interface IEngine
 {
-    void Runrunrunrunrun();
+    void Run();
 }
 
 public interface IVehicle
