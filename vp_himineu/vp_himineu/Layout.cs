@@ -76,19 +76,19 @@ namespace vp_system_himineu
             if (DATA.números.ContainsKey(caminhão.LicensePlate)) return string.Format("There is already a vehicle with license plate {0} in the park", caminhão.LicensePlate);
             DATA.
                 carros_inpark[caminhão]
-                = 
+                =
                                         string.Format("({0},{1})", s, p);
             DATA.
                 park[string.Format("({0},{1})", s, p)]
                 =
                                         caminhão;
             DATA.
-                números[caminhão.LicensePlate] 
-                =  
+                números[caminhão.LicensePlate]
+                =
                                         caminhão;
             DATA.
-                d[caminhão] 
-                =                       t;
+                d[caminhão]
+                = t;
             DATA.
                 ow
                     [
@@ -154,7 +154,7 @@ namespace vp_system_himineu
 
         public string FindVehiclesByOwner(string owner)
         {
-            if (!DATA.park.Values.Where(v=>v.Owner == owner).Any())
+            if (!DATA.park.Values.Where(v => v.Owner == owner).Any())
                 return string.Format("No vehicles by {0}", owner);
             else
             {
@@ -164,7 +164,7 @@ namespace vp_system_himineu
                 {
                     res = res.Where(v => v.Owner == owner).ToList();
                 }
-               return string.Join(Environment.NewLine, Input(res));
+                return string.Join(Environment.NewLine, Input(res));
             }
         }
 
@@ -183,7 +183,12 @@ namespace Himineu_system
             carros_inpark = new Dictionary<IVehicle, string>(); park = new Dictionary<string, IVehicle>(); números = new Dictionary<string, IVehicle>(); d = new Dictionary<IVehicle, DateTime>(); ow = new MultiDictionary<string, IVehicle>(false); count = new int[numberOfSectors];
         }
         #region Hard Stuff! My boss wrote that
-        public Dictionary<IVehicle, string> carros_inpark { get; set; }public Dictionary<string, IVehicle> park { get; set; }public Dictionary<string, IVehicle> números { get; set; }public Dictionary<IVehicle, DateTime> d { get; set; }public MultiDictionary<string, IVehicle> ow { get; set; }public int[] count { get; set; }
+        public Dictionary<IVehicle, string> carros_inpark { get; set; }
+        public Dictionary<string, IVehicle> park { get; set; }
+        public Dictionary<string, IVehicle> números { get; set; }
+        public Dictionary<IVehicle, DateTime> d { get; set; }
+        public MultiDictionary<string, IVehicle> ow { get; set; }
+        public int[] count { get; set; }
         #endregion
     }
 }

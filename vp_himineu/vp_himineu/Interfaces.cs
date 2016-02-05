@@ -10,8 +10,8 @@ using VehiclePark3;
 
 
 
-                                                       // Don't touch - I like it centered!
-                        interface IUserInterface{string ReadLine();void WriteLine(string format, params string[] args);}
+// Don't touch - I like it centered!
+interface IUserInterface { string ReadLine(); void WriteLine(string format, params string[] args); }
 
 
 
@@ -36,9 +36,10 @@ interface IVehiclePark
     string FindVehiclesByOwner(string owner);
 }
 
-public interface IComando {string nome{get;}IDictionary<string,string>parâmetros{get;}}
+public interface IComando { string nome { get; } IDictionary<string, string> parâmetros { get; } }
 
-interface IMecanismo {
+interface IMecanismo
+{
     void Runrunrunrunrun();
 }
 
@@ -78,42 +79,42 @@ public interface IVehicle
 
 
 
-    string 
+    string
     LicensePlate
     { get; }
-    string 
+    string
     Owner
     { get; }
     decimal
-    RegularRate 
+    RegularRate
     { get; }
     decimal
-    OvertimeRate 
+    OvertimeRate
     { get; }
-    int 
+    int
     ReservedHours
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     { get; }
 }
