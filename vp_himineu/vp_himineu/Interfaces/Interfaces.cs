@@ -9,11 +9,11 @@ interface IUserInterface { string ReadLine(); void WriteLine(string format, para
 interface IVehiclePark
 {
     // TODO: Documentar esse método
-    string InsertCar(Carro car, int sector, int placeNumber, DateTime startTime);
+    string InsertCar(Car car, int sector, int placeNumber, DateTime startTime);
     // TODO: Documentar esse método
-    string InsertMotorbike(Moto motorbike, int sector, int placeNumber, DateTime startTime);
+    string InsertMotorbike(Motorbike motorbike, int sector, int placeNumber, DateTime startTime);
     // TODO: Documentar esse método
-    string InsertTruck(Caminhão truck, int sector, int placeNumber, DateTime startTime);
+    string InsertTruck(Truck truck, int sector, int placeNumber, DateTime startTime);
     // TODO: Documentar esse método
     string ExitVehicle(string licensePlate, DateTime endTime, decimal amountPaid);
     // TODO: Documentar esse método

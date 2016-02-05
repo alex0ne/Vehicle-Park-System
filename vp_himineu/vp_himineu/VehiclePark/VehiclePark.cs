@@ -1,5 +1,4 @@
-﻿
-namespace VehicleParkSystem.VehiclePark
+﻿namespace VehicleParkSystem.VehiclePark
 {
     using System;
     using System.Linq;
@@ -18,7 +17,7 @@ namespace VehicleParkSystem.VehiclePark
             DATA = new Data(numberOfSectors);
         }
 
-        public string InsertCar(Carro carro, int s, int p, DateTime t)
+        public string InsertCar(Car carro, int s, int p, DateTime t)
         {
             if (s > layout.sectors)
             {
@@ -50,7 +49,7 @@ namespace VehicleParkSystem.VehiclePark
             return string.Format("{0} parked successfully at place ({1},{2})", carro.GetType().Name, s, p);
         }
 
-        public string InsertMotorbike(Moto moto, int s, int p, DateTime t)
+        public string InsertMotorbike(Motorbike motorbike, int s, int p, DateTime t)
         {
             if (s > layout.sectors)
             {
@@ -67,22 +66,22 @@ namespace VehicleParkSystem.VehiclePark
                 return string.Format("The place ({0},{1}) is occupied", s, p);
             }
 
-            if (DATA.números.ContainsKey(moto.LicensePlate))
+            if (DATA.números.ContainsKey(motorbike.LicensePlate))
             {
-                return string.Format("There is already a vehicle with license plate {0} in the park", moto.LicensePlate);
+                return string.Format("There is already a vehicle with license plate {0} in the park", motorbike.LicensePlate);
             }
 
-            DATA.carros_inpark[moto] = string.Format("({0},{1})", s, p);
-            DATA.park[string.Format("({0},{1})", s, p)] = moto;
-            DATA. números[moto.LicensePlate] = moto;
-            DATA.d[moto] = t;
-            DATA. ow[moto.Owner].Add(moto);
+            DATA.carros_inpark[motorbike] = string.Format("({0},{1})", s, p);
+            DATA.park[string.Format("({0},{1})", s, p)] = motorbike;
+            DATA. números[motorbike.LicensePlate] = motorbike;
+            DATA.d[motorbike] = t;
+            DATA. ow[motorbike.Owner].Add(motorbike);
             DATA.count[s - 1]++;
 
-            return string.Format("{0} parked successfully at place ({1},{2})", moto.GetType().Name, s, p);
+            return string.Format("{0} parked successfully at place ({1},{2})", motorbike.GetType().Name, s, p);
         }
 
-        public string InsertTruck(Caminhão caminhão, int s, int p, DateTime t)
+        public string InsertTruck(Truck truck, int s, int p, DateTime t)
         {
             if (s > layout.sectors)
             {
@@ -99,18 +98,18 @@ namespace VehicleParkSystem.VehiclePark
                 return string.Format("The place ({0},{1}) is occupied", s, p);
             }
 
-            if (DATA.números.ContainsKey(caminhão.LicensePlate))
+            if (DATA.números.ContainsKey(truck.LicensePlate))
             {
-                return string.Format("There is already a vehicle with license plate {0} in the park", caminhão.LicensePlate);
+                return string.Format("There is already a vehicle with license plate {0} in the park", truck.LicensePlate);
             }
 
-            DATA.carros_inpark[caminhão] = string.Format("({0},{1})", s, p);
-            DATA.park[string.Format("({0},{1})", s, p)] = caminhão;
-            DATA.números[caminhão.LicensePlate] = caminhão;
-            DATA.d[caminhão] = t;
-            DATA.ow[caminhão.Owner].Add(caminhão);
+            DATA.carros_inpark[truck] = string.Format("({0},{1})", s, p);
+            DATA.park[string.Format("({0},{1})", s, p)] = truck;
+            DATA.números[truck.LicensePlate] = truck;
+            DATA.d[truck] = t;
+            DATA.ow[truck.Owner].Add(truck);
 
-            return string.Format("{0} parked successfully at place ({1},{2})", caminhão.GetType().Name, s, p);
+            return string.Format("{0} parked successfully at place ({1},{2})", truck.GetType().Name, s, p);
         }
 
         public string ExitVehicle(string l_pl, DateTime end, decimal money)

@@ -37,7 +37,7 @@
                     switch (c.parâmetros["type"])
                     {
                         case "car":
-                            return VehiclePark.InsertCar(new Carro(
+                            return VehiclePark.InsertCar(new Car(
                                 c.parâmetros["licensePlate"], 
                                 c.parâmetros["owner"], 
                                 int.Parse(c.parâmetros["hours"])), 
@@ -47,7 +47,7 @@
                                 null,
                                 System.Globalization.DateTimeStyles.RoundtripKind));//why round trip kind??
                         case "motorbike":
-                            return VehiclePark.InsertMotorbike(new Moto(
+                            return VehiclePark.InsertMotorbike(new Motorbike(
                                 c.parâmetros["licensePlate"], 
                                 c.parâmetros["owner"], 
                                 int.Parse(c.parâmetros["hours"])), 
@@ -57,7 +57,7 @@
                                 null, 
                                 System.Globalization.DateTimeStyles.RoundtripKind));//stack overflow says this
                         case "truck":
-                            return VehiclePark.InsertTruck(new Caminhão(
+                            return VehiclePark.InsertTruck(new Truck(
                                 c.parâmetros["licensePlate"], 
                                 c.parâmetros["owner"], 
                                 int.Parse(c.parâmetros["hours"])), 

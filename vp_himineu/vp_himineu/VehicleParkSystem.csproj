@@ -47,7 +47,9 @@
   <ItemGroup>
     <Compile Include="VehiclePark\Data.cs" />
     <Compile Include="VehiclePark\Layout.cs" />
-    <Compile Include="Vehicles\Vehicle.cs" />
+    <Compile Include="Vehicles\Car.cs" />
+    <Compile Include="Vehicles\Motorbike.cs" />
+    <Compile Include="Vehicles\Truck.cs" />
     <Compile Include="Core\CommandExecutor.cs" />
     <Compile Include="Interfaces\Interfaces.cs" />
     <Compile Include="Important.cs" />
@@ -55,6 +57,7 @@
     <Compile Include="VehiclePark\VehiclePark.cs" />
     <Compile Include="Core\Engine.cs" />
     <Compile Include="VehicleParkSystemMain.cs" />
+    <Compile Include="Vehicles\Vehicle.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
