@@ -45,6 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="VehiclePark\Data.cs" />
+    <Compile Include="VehiclePark\Layout.cs" />
     <Compile Include="Vehicles\Vehicle.cs" />
     <Compile Include="Core\CommandExecutor.cs" />
     <Compile Include="Interfaces\Interfaces.cs" />

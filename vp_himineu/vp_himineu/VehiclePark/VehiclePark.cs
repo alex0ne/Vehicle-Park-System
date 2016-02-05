@@ -1,24 +1,21 @@
-﻿using Himineu_system;
-using System;
-using System.Collections.Generic;
-using VehicleParkSystem.Vehicles;
-using Wintellect.PowerCollections;
-
+﻿
 namespace VehicleParkSystem.VehiclePark
 {
     using System;
     using System.Linq;
     using System.Text;
+    using System.Collections.Generic;
+    using Vehicles;
 
     class VehiclePark : IVehiclePark
     {
-        public layout layout;
-        public DATA DATA;
+        public Layout layout;
+        public Data DATA;
 
         public VehiclePark(int numberOfSectors, int placesPerSector)
         {
-            layout = new layout(numberOfSectors, placesPerSector);
-            DATA = new DATA(numberOfSectors);
+            layout = new Layout(numberOfSectors, placesPerSector);
+            DATA = new Data(numberOfSectors);
         }
 
         public string InsertCar(Carro carro, int s, int p, DateTime t)
@@ -43,7 +40,7 @@ namespace VehicleParkSystem.VehiclePark
                 return string.Format("There is already a vehicle with license plate {0} in the park", carro.LicensePlate);
             }
 
-            DATA.carros_inpark[carro] = string.Format("({0},{1})", s, p); ;
+            DATA.carros_inpark[carro] = string.Format("({0},{1})", s, p); 
             DATA.park[string.Format("({0},{1})", s, p)] = carro;
             DATA.números[carro.LicensePlate] = carro;
             DATA.d[carro] = t;
@@ -118,7 +115,7 @@ namespace VehicleParkSystem.VehiclePark
 
         public string ExitVehicle(string l_pl, DateTime end, decimal money)
         {
-            var vehicle = (DATA.números.ContainsKey(l_pl)) ? DATA.números[l_pl] : null;
+            var vehicle = DATA.números.ContainsKey(l_pl) ? DATA.números[l_pl] : null;
 
             if (vehicle == null)
             {
@@ -131,7 +128,7 @@ namespace VehicleParkSystem.VehiclePark
 
             ticket.AppendLine(new string(
                 '*', 20)).AppendFormat(
-                "{0}", vehicle.ToString()).AppendLine().AppendFormat(
+                "{0}", vehicle).AppendLine().AppendFormat(
                 "at place {0}", DATA.carros_inpark[vehicle]).AppendLine().AppendFormat(
                 "Rate: ${0:F2}", (vehicle.ReservedHours * vehicle.RegularRate)).AppendLine().AppendFormat(
                 "Overtime rate: ${0:F2}", (endd > vehicle.ReservedHours 
@@ -210,50 +207,5 @@ namespace VehicleParkSystem.VehiclePark
                 Environment.NewLine, 
                 DATA.carros_inpark[vehicle])));
         }
-    }
-}
-namespace Himineu_system
-{
-    class DATA
-    {
-        public DATA(int numberOfSectors)
-        {
-            carros_inpark = new Dictionary<IVehicle, string>();
-            park = new Dictionary<string, IVehicle>();
-            números = new Dictionary<string, IVehicle>(); d = new Dictionary<IVehicle, DateTime>();
-            ow = new MultiDictionary<string, IVehicle>(false);
-            count = new int[numberOfSectors];
-        }
-
-        #region Hard Stuff! My boss wrote that
-        public Dictionary<IVehicle, string> carros_inpark { get; set; }
-        public Dictionary<string, IVehicle> park { get; set; }
-        public Dictionary<string, IVehicle> números { get; set; }
-        public Dictionary<IVehicle, DateTime> d { get; set; }
-        public MultiDictionary<string, IVehicle> ow { get; set; }
-        public int[] count { get; set; }
-        #endregion
-    }
-}
-
-class layout
-{
-    public int sectors;
-    public int places_sec;
-    public layout(int numberOfSectors, int placesPerSector)
-    {
-        if (numberOfSectors <= 0)
-        {
-            throw new DivideByZeroException("The number of sectors must be positive.");
-        }
-
-        sectors = numberOfSectors;
-
-        if (placesPerSector <= 0)
-        {
-            throw new DivideByZeroException("The number of places per sector must be positive.");
-        }
-
-        places_sec = placesPerSector;
     }
 }
