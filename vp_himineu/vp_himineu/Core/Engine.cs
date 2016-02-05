@@ -3,15 +3,15 @@
     using System;
     using Comandos;
 
-    class Mecanismo :IMecanismo
+    class Engine :IMecanismo
     {
         private CommandExecutor ex;
-        Mecanismo (CommandExecutor ex)
+        Engine (CommandExecutor ex)
         {
             this.ex = ex;
         }
 
-        public Mecanismo(): this(new CommandExecutor())
+        public Engine(): this(new CommandExecutor())
         {
         }
 

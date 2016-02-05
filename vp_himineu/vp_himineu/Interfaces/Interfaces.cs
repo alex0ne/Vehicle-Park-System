@@ -31,78 +31,11 @@ interface IMecanismo
     void Runrunrunrunrun();
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public interface IVehicle
 {
-
-
-
-
-
-
-
-
-
-
-
-    string
-    LicensePlate
-    { get; }
-    string
-    Owner
-    { get; }
-    decimal
-    RegularRate
-    { get; }
-    decimal
-    OvertimeRate
-    { get; }
-    int
-    ReservedHours
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    { get; }
+    string LicensePlate { get; }
+    string Owner { get; }
+    decimal RegularRate { get; }
+    decimal OvertimeRate { get; }
+    int ReservedHours { get; }
 }

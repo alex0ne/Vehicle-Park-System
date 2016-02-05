@@ -1,5 +1,4 @@
-﻿
-namespace vp_himineu
+﻿namespace vp_himineu
 {
     using System;
 

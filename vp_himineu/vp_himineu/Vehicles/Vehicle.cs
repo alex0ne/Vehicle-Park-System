@@ -1,8 +1,9 @@
-﻿using System;
-using System.Text;
-using System.Text.RegularExpressions;
-namespace VehiclePark3
+﻿namespace VehiclePark3
 {
+    using System;
+    using System.Text;
+    using System.Text.RegularExpressions;
+
     public class Carro : IVehicle
     {
         #region No interesting
