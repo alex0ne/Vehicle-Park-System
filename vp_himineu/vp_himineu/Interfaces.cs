@@ -1,21 +1,9 @@
 ﻿using System;
-
-
-
 using System.Collections.Generic;
 using VehiclePark3;
 
-
-
-
-
-
 // Don't touch - I like it centered!
 interface IUserInterface { string ReadLine(); void WriteLine(string format, params string[] args); }
-
-
-
-
 
 // TODO: Documente esta contrato
 interface IVehiclePark

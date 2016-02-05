@@ -1,102 +1,43 @@
-﻿using System;
-using Comandos;
-
-namespace VehicleParkSystem2
+﻿namespace VehicleParkSystem2
 {
-    class
-              Mecanismo
-                         :
-                            IMecanismo
+    using System;
+    using Comandos;
+
+    class Mecanismo :IMecanismo
     {
-        private
-                   exec
-                          ex;
-        Mecanismo
-                  (
-                    exec ex
-                            )
+        private CommandExecutor ex;
+        Mecanismo (CommandExecutor ex)
         {
-            this.ex
-                           =
-                                        ex;
+            this.ex = ex;
         }
 
-        public
-                    Mecanismo
-                                        ()
-                                           :
-                                             this
-                                                    (
-                                                        new exec
-                                                                            ()
-                                                                                )
+        public Mecanismo(): this(new CommandExecutor())
         {
         }
 
-        public
-                void
-                        Runrunrunrunrun
-                            ()
+        public void Runrunrunrunrun()
         {
-            while
-                    (
-                        true
-                                )
+            while (true)
             {
-                string
-                        commandLine
-                                    =
-                                        Console.
-                                                    ReadLine();
+                string commandLine = Console.ReadLine();
+
                 if (commandLine == null) break;
 
                 commandLine.Trim();
-                if (
-                        string.IsNullOrEmpty
-                                              (
-                                                commandLine
-                                                            )
-                                                                )
 
-                    try
-                    {
-                        var
-                            comando
-                                    =
-                                        new
-                                             exec
-                                                                .
-                                                                    comando
-                                                                            (
-                                                                                commandLine
-                                                                                            );
-                        string commandResult
-                                                =
+                if (string.IsNullOrEmpty(commandLine))
 
-                                                            ex
-                                                                            .
-                                                                                execução(comando);
-                        Console
-                                .
-                                    WriteLine
-                                                (
-                                                  commandResult
-                                                                );
-                    }
-                    catch
-                          (
-                            Exception
-                                       ex
-                                          )
-                    {
-                        Console
-                                .
-                                    WriteLine
-                                                (
-                                                    ex
-                                                        .
-                                                            Message);
-                    }
+                try
+                {
+                    var comando = new CommandExecutor.Comando(commandLine);
+                    string commandResult = ex.execução(comando);
+                    Console.WriteLine(commandResult);
+                }
+
+                catch(Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
             }
         }
     }
