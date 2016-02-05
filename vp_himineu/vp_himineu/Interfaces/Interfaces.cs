@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using VehiclePark3;
+using VehicleParkSystem.Vehicles;
 
 // Don't touch - I like it centered!
 interface IUserInterface { string ReadLine(); void WriteLine(string format, params string[] args); }

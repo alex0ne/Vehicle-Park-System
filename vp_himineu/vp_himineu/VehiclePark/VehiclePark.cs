@@ -1,9 +1,10 @@
 ﻿using Himineu_system;
 using System;
 using System.Collections.Generic;
+using VehicleParkSystem.Vehicles;
 using Wintellect.PowerCollections;
 
-namespace vp_system_himineu
+namespace VehicleParkSystem.VehiclePark
 {
     using System;
     using System.Linq;
@@ -20,7 +21,7 @@ namespace vp_system_himineu
             DATA = new DATA(numberOfSectors);
         }
 
-        public string InsertCar(VehiclePark3.Carro carro, int s, int p, DateTime t)
+        public string InsertCar(Carro carro, int s, int p, DateTime t)
         {
             if (s > layout.sectors)
             {
@@ -52,7 +53,7 @@ namespace vp_system_himineu
             return string.Format("{0} parked successfully at place ({1},{2})", carro.GetType().Name, s, p);
         }
 
-        public string InsertMotorbike(VehiclePark3.Moto moto, int s, int p, DateTime t)
+        public string InsertMotorbike(Moto moto, int s, int p, DateTime t)
         {
             if (s > layout.sectors)
             {
@@ -84,7 +85,7 @@ namespace vp_system_himineu
             return string.Format("{0} parked successfully at place ({1},{2})", moto.GetType().Name, s, p);
         }
 
-        public string InsertTruck(VehiclePark3.Caminhão caminhão, int s, int p, DateTime t)
+        public string InsertTruck(Caminhão caminhão, int s, int p, DateTime t)
         {
             if (s > layout.sectors)
             {

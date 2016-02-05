@@ -1,9 +1,10 @@
-﻿namespace Comandos
+﻿namespace VehicleParkSystem.Core
 {
     using System;
     using System.Collections.Generic;
-    using vp_system_himineu;
     using System.Web.Script.Serialization;
+    using VehiclePark;
+    using Vehicles;
 
     class CommandExecutor
     {
@@ -36,7 +37,7 @@
                     switch (c.parâmetros["type"])
                     {
                         case "car":
-                            return VehiclePark.InsertCar(new VehiclePark3.Carro(
+                            return VehiclePark.InsertCar(new Carro(
                                 c.parâmetros["licensePlate"], 
                                 c.parâmetros["owner"], 
                                 int.Parse(c.parâmetros["hours"])), 
@@ -46,7 +47,7 @@
                                 null,
                                 System.Globalization.DateTimeStyles.RoundtripKind));//why round trip kind??
                         case "motorbike":
-                            return VehiclePark.InsertMotorbike(new VehiclePark3.Moto(
+                            return VehiclePark.InsertMotorbike(new Moto(
                                 c.parâmetros["licensePlate"], 
                                 c.parâmetros["owner"], 
                                 int.Parse(c.parâmetros["hours"])), 
@@ -56,7 +57,7 @@
                                 null, 
                                 System.Globalization.DateTimeStyles.RoundtripKind));//stack overflow says this
                         case "truck":
-                            return VehiclePark.InsertTruck(new VehiclePark3.Caminhão(
+                            return VehiclePark.InsertTruck(new Caminhão(
                                 c.parâmetros["licensePlate"], 
                                 c.parâmetros["owner"], 
                                 int.Parse(c.parâmetros["hours"])), 

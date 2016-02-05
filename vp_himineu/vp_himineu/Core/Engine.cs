@@ -1,7 +1,6 @@
-﻿namespace VehicleParkSystem2
+﻿namespace VehicleParkSystem.Core
 {
     using System;
-    using Comandos;
 
     class Engine :IEngine
     {

@@ -1,4 +1,4 @@
-﻿namespace VehiclePark3
+﻿namespace VehicleParkSystem.Vehicles
 {
     using System;
     using System.Text;

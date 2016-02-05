@@ -1,8 +1,9 @@
-﻿namespace VehicleParkSystem
+﻿using VehicleParkSystem.Core;
+
+namespace VehicleParkSystem
 {
     using System.Globalization;
     using System.Threading;
-    using VehicleParkSystem2;
 
     static class VehicleParkSystemMain
     {
