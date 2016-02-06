@@ -1,0 +1,4 @@
+﻿interface IEngine
+{
+    void Run();
+}

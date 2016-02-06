@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using VehicleParkSystem.Vehicles;
 
 // Don't touch - I like it centered!
-interface IUserInterface { string ReadLine(); void WriteLine(string format, params string[] args); }
+//interface IUserInterface { string ReadLine(); void WriteLine(string format, params string[] args); }
 
 // TODO: Documente esta contrato
 interface IVehiclePark
@@ -22,20 +21,4 @@ interface IVehiclePark
     string FindVehicle(string licensePlate);
     // TODO: Documentar esse método
     string FindVehiclesByOwner(string owner);
-}
-
-public interface IComando { string nome { get; } IDictionary<string, string> parâmetros { get; } }
-
-interface IEngine
-{
-    void Run();
-}
-
-public interface IVehicle
-{
-    string LicensePlate { get; }
-    string Owner { get; }
-    decimal RegularRate { get; }
-    decimal OvertimeRate { get; }
-    int ReservedHours { get; }
 }
