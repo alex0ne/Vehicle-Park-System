@@ -11,6 +11,7 @@
         public class Comando : IComando
         {
             public string nome { get; set; }
+
             public IDictionary<string, string> parâmetros { get; set; }
 
             public Comando(string str)
@@ -89,18 +90,3 @@
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -17,10 +17,15 @@
 
         #region Hard Stuff! My boss wrote that
         public Dictionary<IVehicle, string> carros_inpark { get; set; }
+
         public Dictionary<string, IVehicle> park { get; set; }
+
         public Dictionary<string, IVehicle> números { get; set; }
+
         public Dictionary<IVehicle, DateTime> d { get; set; }
+
         public MultiDictionary<string, IVehicle> ow { get; set; }
+
         public int[] count { get; set; }
         #endregion
     }
